@@ -128,7 +128,7 @@
   
       <div class="col-md-7">
         <!--src="http://placehold.it/750x500"-->
-        <img width="750" height="500" class="img-fluid" src="/storage/cover_images/{{$post->image}}" alt="">
+        <img width="750" height="500" class="img-fluid" src="{{asset('storage/cover_images/'.$post->image)}}" alt="">
       </div>
   
       <div class="col-md-5">

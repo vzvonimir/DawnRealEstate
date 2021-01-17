@@ -29,7 +29,7 @@
             </div>
             @if(isset($post))
                 <div class="form-group">
-                    <img src="/storage/cover_images/{{$post->image}}" alt="" width="100%">
+                    <img src="{{asset('storage/cover_images/'.$post->image)}}" alt="" width="100%">
                 </div>
             @endif
             <div class="form-group">

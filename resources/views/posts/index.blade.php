@@ -25,7 +25,7 @@
                 <tbody>
                     @foreach($posts as $post)
                         <tr>
-                            <td><img width="130" height="80" src="/storage/cover_images/{{$post->image}}"></td>
+                            <td><img width="130" height="80" src="{{asset('storage/cover_images/'.$post->image)}}"></td>
                             <td>{{$post->title}}</td>
                             @if(auth()->user()->isAdmin())
                                 <td>

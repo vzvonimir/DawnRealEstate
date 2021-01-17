@@ -133,7 +133,7 @@
         @forelse($posts as $post)
         <div class="col">
           <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{asset('cover_images/$post->image')}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{asset('cover_images/'.$post->image)}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
             <div class="card-body">
               <h5 class="card-title">{{$post->title}}</h5>

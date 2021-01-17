@@ -247,7 +247,7 @@
     <script>
       function sendMessage(id){
           var form = document.getElementById('formID');
-          form.action = url('message.send', id);
+          form.action = url('sendMessage/' + id);
           $('#myModal').modal('show');
       };
 

@@ -224,7 +224,7 @@
         <h2 class="featurette-heading">What we offer? <span class="text-muted">See for yourself.</span></h2>
         <p class="lead">We offer a wide variety of buyers, sellers and properties.
            Our goal is to make the selling or buying the property as easy as possible.
-            Whit us you can easily sell your property.
+            With us you can easily sell your property.
            Or if you are looking for new home, 
           our team will help you find the perfect house for you.</p>
       </div>

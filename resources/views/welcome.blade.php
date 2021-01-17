@@ -116,7 +116,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="bd-placeholder-img" width="100%" height="100%" src="images/House2.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img" width="100%" height="100%" src="{{asset('images/House2.jpg')}}" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
 
         <div class="container">
           <div class="carousel-caption text-start">

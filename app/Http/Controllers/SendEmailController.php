@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use Illuminate\Mail\Mailable;
-class ContactController extends Controller
+use App\Post;
+use App\User;
+class SendEmailController extends Controller
 {
     public function index()
     {
-        return view('contact.index');
+        return view('properties.index');
     }
     
-    function send(Request $request)
+    function send(Request $request, Post $post)
     {
         $this->validate($request, [
             'name' => 'required',
@@ -26,10 +28,10 @@ class ContactController extends Controller
             'message' => $request->message,
         );
 
-        Mail::to('zvonimir.vistica99@gmail.com')->send(new SendMail($data));
+        $mail = $post->user->email;
+        Mail::to($mail)->send(new SendMail($data));
 
-        return back()->with('success', 'Thanks for contacting us!');
+        return back()->with('success', 'Message sent successfully.');
 
     }
-
 }

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>DawnRealEstate</title>
-
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
 
     <!-- Bootstrap core CSS -->
@@ -19,6 +20,7 @@
         -moz-user-select: none;
         user-select: none;
       }
+
 
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
@@ -110,6 +112,12 @@
   <!-- Page Content -->
 <div class="container">
 
+  @if(session()->has('success'))
+      <div class="alert alert-success">
+          {{session()->get('success')}}
+      </div>
+      @endif
+
     <!-- Portfolio Item Heading -->
     <h1 class="my-4">
       {{$post->title}}
@@ -136,7 +144,7 @@
           <li><b>Price:</b> {{$post->price}}</li>  
         </ul>
         <div class="mt-5">
-          <a type="button" class="btn btn-sm btn-secondary">Send Message</a>
+          <a type="button" class="btn btn-sm btn-secondary" onclick="sendMessage({{$post->id}})">Send Message</a>
           <small style="float: right;" class="text-muted"><?php $str = explode(" ",$post->created_at); echo $str[0]; ?>  by {{$post->user->name}}</small>
           <!--<label style="float: right;">afadf</label>-->
         </div>
@@ -146,6 +154,44 @@
     </div>
     <!-- /.row -->
    <!-- <hr class="featurette-divider mt-4">-->
+
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="background-color: rgb(192, 191, 191);">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Send Message</h5>
+          <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          @include('partials.errors')
+          <form method="POST" action="" id="formID">
+            @csrf
+          <div class="form-group mt-3">
+            <input id="name" type="text" placeholder="Your Name" class="form-control" name="name" required autocomplete="name" autofocus>
+          </div>
+    
+          <div class="form-group mt-3">
+            <input id="email" type="email" name="email" placeholder="Your Email" class="form-control" required autocomplete="email">
+          </div>
+    
+          <div class="form-group mt-3">
+            <textarea id="text" type="text" placeholder="Message" class="form-control" name="message"></textarea>
+          </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modalClose">Close</button>
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+
+
+
   </div>
  <!--   <div class="container">
     
@@ -195,6 +241,27 @@
 
 
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      function sendMessage(id){
+          var form = document.getElementById('formID');
+          form.action = '/sendMessage/' + id;
+          $('#myModal').modal('show');
+      };
+
+      $(function () {
+        $('#modalClose').on('click', function () {
+            $('#myModal').modal('hide');
+        })
+    });
+
+    $(function () {
+        $('#close').on('click', function () {
+            $('#myModal').modal('hide');
+        })
+    });
+  </script>
 
   </body>
 </html>

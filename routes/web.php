@@ -14,9 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//URL::forceRootUrl('http://studenti.sum.ba/projekti/fsre_rwa/2020/g14');
+
 Route::get('/properties', 'PropertiesController@index')->name('properties');
 Route::get('/contact', 'ContactController@index')->name('contact');
 Route::get('property/posts/{post}', 'PropertiesController@show')->name('property.show');
+Route::post('/contact/send', 'ContactController@send');
+Route::post('/sendMessage/{post}', 'SendEmailController@send')->name('message.send');
 Auth::routes();
 
 Route::middleware(['auth'])->group(function(){

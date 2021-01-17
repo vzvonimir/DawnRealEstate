@@ -5,6 +5,7 @@
     <div class="card card-default">
         <div class="card-header">Users</div>
         <div class="card-body">
+            <div class="table-responsive">
             @if($users->count() > 0)
             <table class="table">
                 <thead>
@@ -34,6 +35,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
             @else
                 <h3>No Users yet.</h3>
             @endif

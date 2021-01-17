@@ -6,7 +6,8 @@
     <meta name="description" content="">
     
     <title>DawnRealEstate</title>
-
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
 
     
@@ -31,7 +32,7 @@
     </style>
 
     
-    <!-- Custom styles for this template -->
+    
     <link href="{{asset('css/carousel.css')}}" rel="stylesheet">
   </head>
   <body>
@@ -168,25 +169,35 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/person-1.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
-
-        <h2>Robert Čačija</h2>
-        <p>My name is Robert Čačija, I was born on 28th of April in 1999 in Croatia. I'm a 3rd year student at FSRE in Mostar. I currently live in Sinj. I hope that throughout this project we will learn a lot more about web page development, building and teamwork in general.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/person-1.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/zvone4.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
 
         <h2>Zvonimir Vištica</h2>
-        <p>My name is Zvonimir Vištica, I was born on 2nd of July in 1999 in Bosnia and Herzegovina. I'm currently living in Ljubuški. I'm also a 3rd year student at FSRE. In this project I'm looking forward to getting some more insight in web development feild and also in coding generally.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <p>My name is Zvonimir Vištica, I was born on 2nd of July in 1999 in Bosnia and Herzegovina in Ljubuški.
+          I am studying computer science at FSRE in Mostar. I am currently in my third year of study.
+           I worked on this project as a backend and frontend developer.
+        </p>
+        <p><a class="btn btn-secondary" href="{{route('contact')}}" role="button">Contact &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/person-1.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/robert.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
+
+        <h2>Robert Čačija</h2>
+        <p>My name is Robert Čačija, I was born on 28th of April in 1999 in Croatia. I currently live in Sinj.
+          I am studying computer science at FSRE in Mostar. I am currently in my third year of study.
+           I worked on this project as a frontend developer.
+        </p>
+        <p><a class="btn btn-secondary" href="{{route('contact')}}" role="button">Contact &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/josip.jpg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
 
         <h2>Josip Kordić</h2>
-        <p>My name is Josip Kordić, I was born on 23rd of March in 2000 in Bosnia and Herzegovina. I'm currently living in Čitluk with my family. I'm a 3rd year student at FSRE in Mostar. I really look forward to this project because we are learning new things and we are expending our knowlege of programming.</p>
-        <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+        <p>My name is Josip Kordić, I was born on 23rd of March in 2000 in Bosnia and Herzegovina. I'm currently living in Čitluk.
+          I am studying computer science at FSRE in Mostar. I am currently in my third year of study.
+          I worked on this project as a frontend developer.
+        </p>
+        <p><a class="btn btn-secondary" href="{{route('contact')}}" role="button">Contact &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
   
@@ -268,7 +279,7 @@
   <!-- FOOTER -->
   <footer class="container">
     <a class="float-end btn btn-dark btn-sm" href="#">Back to top</a>
-    <p>&copy; 2021 DawnRealEstate</p>
+    <p>&copy; 2021 DawnRealEstate, <a href="https://github.com/vzvonimir/DawnRealEstate.git" target="_blank">GitHub</a></p>
   </footer>
 </main>
 

@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Form</title>
-    
+    <title>DawnRealEstate</title>
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
       crossorigin="anonymous"
@@ -46,8 +47,8 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
+                  <li class="nav-item ">
+                    <a class="nav-link"  href="{{ url('/') }}">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{url('/')}}#about_us">About Us</a>
@@ -108,8 +109,9 @@
   
 
   <main>
-
+   
     <div class="container1" style="background-image: url(images/lux.jpg);">
+      
       
       <div class="form">
         <div class="contact-info">
@@ -139,9 +141,15 @@
 
         <div class="contact-form">
 
-
-          <form action="index.html" autocomplete="off">
+          <form action="{{ url('contact/send') }}" method="POST" autocomplete="off">
+            @csrf
             <h3 class="title">Contact us</h3>
+            @if(session()->has('success'))
+                    <div class="alert alert-success">
+                        {{session()->get('success')}}
+                    </div>
+            @endif
+            @include('partials.errors')
             <div class="input-container">
               <input type="text" name="name" class="input" />
               <label for="">Name</label>
@@ -157,7 +165,7 @@
               <label for="">Message</label>
               <span>Message</span>
             </div>
-            <input type="submit" value="Send" class="btn btn-primary" />
+            <input type="submit" name="send" value="Send" class="btn btn-primary" />
           </form>
         </div>
       </div>

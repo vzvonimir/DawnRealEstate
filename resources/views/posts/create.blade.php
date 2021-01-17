@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card card-default">
-        <div class="card-header">{{isset($post) ? 'Edit Post' : 'Create Post'}}</div>
+        <div class="card-header">{{isset($post) ? 'Edit Property' : 'Create Property'}}</div>
         <div class="card-body">
             @include('partials.errors')
             {!! Form::open(['action' => isset($post)? ['PostsController@update',$post->id] : 'PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
@@ -72,7 +72,7 @@
                 </select>
             </div>
             @endif
-            {{Form::submit(isset($post)?'Update Post' : 'Create Post', ['class' => 'btn btn-success'])}}
+            {{Form::submit(isset($post)?'Update Property' : 'Create Property', ['class' => 'btn btn-success'])}}
         {!! Form::close() !!}
         </div>
     </div>

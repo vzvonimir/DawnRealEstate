@@ -3,12 +3,13 @@
 @section('content')
 
     <div class="d-flex justify-content-end mb-2 mt-2">
-        <a href="{{route('posts.create')}}" class="btn btn-success">Add Post</a>
+        <a href="{{route('posts.create')}}" class="btn btn-success">Add Property</a>
     </div>
 
     <div class="card card-default">
-        <div class="card-header">Posts</div>
+        <div class="card-header">Properties</div>
         <div class="card-body">
+            <div class="table-responsive">
            @if($posts->count() > 0)
             <table class="table">
                 <thead>
@@ -70,8 +71,9 @@
                     <tr><td>{{$posts->links()}}</td></tr>
                 </tfoot>
             </table>
+            </div>
             @else
-                <h3>You have no posts.</h3>
+                <h3>You have no properties.</h3>
             @endif
         </div>
     </div>

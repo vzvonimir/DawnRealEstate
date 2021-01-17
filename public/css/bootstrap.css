@@ -2157,6 +2157,7 @@ progress {
   color: #212529;
   background-color: #fff;
   background-clip: padding-box;
+  margin: 1rem 0rem;
   border: 1px solid #ced4da;
   -webkit-appearance: none;
   -moz-appearance: none;

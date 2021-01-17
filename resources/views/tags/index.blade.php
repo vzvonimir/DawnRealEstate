@@ -9,6 +9,7 @@
     <div class="card card-default">
         <div class="card-header">Tags</div>
         <div class="card-body">
+            <div class="table-responsive">
             @if($tags->count() > 0)
             <table class="table">
                 <thead>
@@ -33,7 +34,7 @@
                     @endforeach
                 </tbody>
             </table>
-
+            </div>
             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <form action="" method="POST" id="deleteTagForm">

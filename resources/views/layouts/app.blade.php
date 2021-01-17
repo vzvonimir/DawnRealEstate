@@ -8,15 +8,17 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'DawnRealEstate') }}</title>
-
-    
+    <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">-->
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
 
     <style>
         .btn-info{
@@ -27,7 +29,7 @@
     @yield('css')
 
 </head>
-<body>
+<body style="background-color: rgb(223, 221, 221);">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
             <div class="container">
@@ -115,32 +117,52 @@
                     </div>
                 @endif
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4 mt-4">
                             <ul class="list-group">
                                 @if(auth()->user()->isAdmin())
                                 <li class="list-group-item">
-                                    <a href="{{route('users.index')}}">
+                                   <!-- <a href="{{route('users.index')}}">
+                                        Users
+                                    </a>-->
+                                    <a class="nav-link" href="{{route('users.index')}}">
+                                        <span data-feather="users"></span>
                                         Users
                                     </a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{route('tags.index')}}">Tags</a>
+                                    <!--<a href="{{route('tags.index')}}">Tags</a>-->
+                                    <a class="nav-link" href="{{route('tags.index')}}">
+                                        <span data-feather="list"></span>
+                                        Property Tags
+                                    </a>              
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{route('categories.index')}}">Categoris</a>
+                                    <!--<a href="{{route('categories.index')}}">Categoris</a>-->
+                                    <a class="nav-link" href="{{route('categories.index')}}">
+                                        <span data-feather="layers"></span>
+                                        Categories
+                                    </a>
                                 </li>
                                 @endif
                                 <li class="list-group-item">
-                                    <a href="{{route('posts.index')}}">Posts</a>
+                                    <!--<a href="{{route('posts.index')}}">Posts</a>-->
+                                    <a class="nav-link active" aria-current="page" href="{{route('posts.index')}}">
+                                        <span data-feather="home"></span>
+                                        Properties
+                                    </a>
                                 </li>
-                            </ul>
-                            <ul class="list-group mt-5 mb-4">
                                 <li class="list-group-item">
-                                    <a href="{{route('trashed-posts.index')}}">Trashed Posts</a>
+                                    <!--<a href="{{route('trashed-posts.index')}}">Trashed Posts</a>-->
+                                    <a class="nav-link" href="{{route('trashed-posts.index')}}">
+                                        <span data-feather="trash-2"></span>
+                                        Trashed Properties
+                                    </a>
                                 </li>
                             </ul>
+                            
+                            
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 mt-4">
                             @yield('content')
                         </div>
                     </div>
@@ -154,6 +176,8 @@
 
    <!-- Scripts -->
    <script src="{{ asset('js/app.js') }}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="{{asset('js/dashboard.js')}}"></script>
+
     @yield('scripts')
 </body>
 </html>

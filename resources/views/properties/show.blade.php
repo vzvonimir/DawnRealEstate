@@ -165,9 +165,10 @@
           </button>
         </div>
         <div class="modal-body">
-          @include('partials.errors')
+        
           <form method="POST" action="" id="formID">
             @csrf
+            @include('partials.errors')
           <div class="form-group mt-3">
             <input id="name" type="text" placeholder="Your Name" class="form-control" name="name" required autocomplete="name" autofocus>
           </div>
@@ -246,7 +247,7 @@
     <script>
       function sendMessage(id){
           var form = document.getElementById('formID');
-          form.action = route('message.send', id);
+          form.action = url('message.send', id);
           $('#myModal').modal('show');
       };
 

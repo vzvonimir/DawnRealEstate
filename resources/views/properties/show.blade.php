@@ -247,7 +247,9 @@
     <script>
       function sendMessage(id){
           var form = document.getElementById('formID');
-          form.action = '{{route("message.send", ${id})}}';
+          let url = "{{ route('message.send', ':id') }}";
+          url = url.replace(':id', id);
+          form.action = url;
           $('#myModal').modal('show');
       };
 

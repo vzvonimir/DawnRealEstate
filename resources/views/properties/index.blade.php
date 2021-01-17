@@ -133,7 +133,7 @@
         @forelse($posts as $post)
         <div class="col">
           <div class="card shadow-sm">
-            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="/public/storage/cover_images/{{$post->image}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="storage/app/public/cover_images/{{$post->image}}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
 
             <div class="card-body">
               <h5 class="card-title">{{$post->title}}</h5>
@@ -146,7 +146,7 @@
                   <a href="{{route('property.show', $post->id)}}" class="btn btn-sm btn-outline-secondary">View</a>
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="sendMessage({{$post->id}})">Send Message</button>
                 </div>
-                  <small class="text-muted"><?php $str = explode(" ",$post->created_at); echo $str[0]; ?>  by {{$post->user->name}}</small>
+                  <small class="text-muted"><?php $str = explode(" ",$post->created_at); echo $str[0]; ?>  by <?php $str = explode(" ",$post->user->name); echo $str[0]; ?></small>
               </div>
             </div>
           </div>

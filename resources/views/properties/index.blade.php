@@ -146,7 +146,7 @@
                   <a href="{{route('property.show', $post->id)}}" class="btn btn-sm btn-outline-secondary">View</a>
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="sendMessage({{$post->id}})">Send Message</button>
                 </div>
-                  <small class="text-muted padd"><?php $str = explode(" ",$post->created_at); echo $str[0]; ?>  by <?php $str = explode(" ",$post->user->name); echo $str[0]; ?></small>
+                  <small class="text-muted"><?php $str = explode(" ",$post->created_at); echo $str[0]; ?>  by <?php $str = explode(" ",$post->user->name); echo $str[0]; ?></small>
               </div>
             </div>
           </div>

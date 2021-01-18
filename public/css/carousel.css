@@ -84,14 +84,7 @@ body {
   .featurette-heading {
     font-size: 50px;
   }
-
-  .carousel-item {
-    height: 36rem;
-  }
-
-  .padd{
-    padding-left:1rem;
-  }
+  
 }
 
 @media (min-width: 62em) {
